@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:food_app/constants.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 class LoginPage extends StatefulWidget {
@@ -40,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
           Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("assets/BackgroundImage.jpg"),
+                    image: AssetImage(//use any image for background),
                     fit: BoxFit.fill)),
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),
@@ -151,7 +150,6 @@ class _LoginPageState extends State<LoginPage> {
                                       _scaffoldKey.currentState.showSnackBar(
                                       snackBar);
 
-                                      //print(PlatformException);
                                       setState(() {
                                         FocusScope.of(context)
                                             .requestFocus(new FocusNode());
@@ -193,7 +191,7 @@ class _LoginPageState extends State<LoginPage> {
                           backgroundColor: Colors.red,
                           radius: 60,
                           backgroundImage:
-                              AssetImage("assets/BackgroundImage.jpg"),
+                              AssetImage(//set any image to show a default profile pic),
                         ),
                       ),
                     ),
@@ -274,10 +272,6 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  normalOnPress() {}
-
-  authOnPress() {}
-
   Padding getButton(String name, IconData icon, Function onPress) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 7),
@@ -302,6 +296,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+              /////////////////////////////This is the main widget of this page///////////////////
 
 class Pages extends StatelessWidget {
   final String subject;
